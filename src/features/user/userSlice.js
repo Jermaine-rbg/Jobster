@@ -7,7 +7,7 @@ user:null,
 };
 
 const userSlice = {
-    name:user,
+    name:'user',
     initialState,
 };
 
