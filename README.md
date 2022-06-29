@@ -608,6 +608,8 @@ npm install axios
 - Root URL
 - https://jobify-prod.herokuapp.com/api/v1/toolkit
 
+https://jobify-prod.herokuapp.com/api/v1/toolkit/auth/login
+
 - NODE COURSE
 
 ###### Register USER
