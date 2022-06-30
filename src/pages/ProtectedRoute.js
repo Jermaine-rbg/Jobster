@@ -10,5 +10,5 @@ const ProtectedRoute = ({children}) => {
     }
   return children;
 }
-
+// the bug starts somewhere in here
 export default ProtectedRoute;
