@@ -27,7 +27,7 @@ const Navbar = () => {
             <div className='dropdown show-dropdown'>
                 <button 
                 type='button' 
-                className='dropdown' 
+                className='dropdown-btn' 
                 onClick={()=>console.log('logout user')}>logout</button>
             </div>
 
