@@ -1,4 +1,4 @@
-import green from '../assets/images/green.svg'
+import reactresume from '../assets/images/reactresume.svg'
 import Wrapper from '../assets/wrappers/LandingPage';
 import { Logo } from '../components';
 import { Link } from 'react-router-dom';
@@ -19,7 +19,7 @@ const Landing = () => {
             <p>Just some text for the landing page!</p>
             <button className='btn btn-hero'>Login/Register</button>
           </div>
-          <img src={green} alt='job hunt' className='img main-img' />
+          <img src={reactresume} alt='job hunt' className='img main-img' />
         </div>
       
       </Wrapper>
