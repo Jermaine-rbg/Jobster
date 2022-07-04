@@ -36,7 +36,7 @@ npx create-react-app@latest myApp
 - replace favicon.ico in public
 - resource [Generate Favicons](https://favicon.io/)
 
-#### 3) Normalize.css and Global Styles
+#### 2) Normalize.css and Global Styles
 
 - CSS in JS (styled-components)
 - saves times on the setup
@@ -51,13 +51,9 @@ npm install normalize.css
 ```
 
 - import 'normalize.css' in index.js
-- SET BEFORE 'index.css'
-- replace contents of index.css
-- if any questions about normalize or specific styles
 - Coding Addict - [Default Starter Video](https://youtu.be/UDdyGNlQK5w)
-- Repo - [Default Starter Repo](https://github.com/john-smilga/default-starter)
 
-#### 4) Landing Page - Setup
+#### 3) Landing Page - Setup
 
 - zoom level 175%
 - markdown preview extension
@@ -75,7 +71,7 @@ npm install normalize.css
 - import logo.svg and main.svg
 - import Landing in App.js and render
 
-##### 5) Landing Page - Structure
+##### 4) Landing Page - Structure
 
 - Landing.js
 
@@ -104,7 +100,7 @@ const Landing = () => {
 export default Landing;
 ```
 
-#### 6) Styled Components - Basic Setup
+#### 5) Styled Components - Basic Setup
 
 - CSS in JS
 - Styled Components
