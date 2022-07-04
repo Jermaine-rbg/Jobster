@@ -2,13 +2,6 @@
 
 Project in Action - [Jobster](https://redux-toolkit-jobster.netlify.app/)
 
-#### React Course
-
-[My React Course](https://www.udemy.com/course/react-tutorial-and-projects-course/?referralCode=FEE6A921AF07E2563CEF)
-
-#### Support
-
-Find the App Useful? [You can always buy me a coffee](https://www.buymeacoffee.com/johnsmilga)
 
 #### Run The App Locally
 
@@ -35,17 +28,9 @@ npx create-react-app@latest myApp
 - set editor/browser side by side
 - copy/paste assets and readme from complete project
 
-#### 1) Spring Cleaning
 
-- in src remove
-- App.css
-- App.test.js
-- logo.svg
-- reportWebVitals.js
-- setupTests.js
-- fix App.js and index.js
 
-#### 2) Title and Favicon
+#### 1) Title and Favicon
 
 - change title in public/index.html
 - replace favicon.ico in public
