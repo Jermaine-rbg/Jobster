@@ -25,7 +25,7 @@ const Profile = () => {
       toast.error('you forgot something')
       return; 
     }
-    dispatch(updateUser(userData));
+    dispatch(updateUser({name, email, lastName, location}));
   };
 
   const handleChange = (e) => {

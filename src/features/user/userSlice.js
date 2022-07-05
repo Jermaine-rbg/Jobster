@@ -27,6 +27,7 @@ export const loginUser = createAsyncThunk('user/loginUser', async(user, thunkAPI
     const resp = await customFetch.post('/auth/login', user)
     return resp.data;
    } catch (error){
+   
     return thunkAPI.rejectWithValue(error.response.data.msg);
    }
 });
@@ -45,17 +46,16 @@ export const updateUser = createAsyncThunk(
   
         return resp.data;
       } catch (error) {
-         console.log(error.response);
-        if (error.response.status === 401) {
-          thunkAPI.dispatch(logoutUser());
+        if(error.response.status === 401){
+          thunkAPI.dispatch(logoutUser())
           return thunkAPI.rejectWithValue('Unauthorized! Logging Out...');
-        }
+       }
         return thunkAPI.rejectWithValue(error.response.data.msg);
       }
     }
   );
   
-   
+ 
 
 const userSlice = createSlice({
     name: 'user',
@@ -113,7 +113,7 @@ const userSlice = createSlice({
         state.user = user;
   
         addUserToLocalStorage(user);
-        toast.success('User Updated');
+        toast.success(`You're Good to Go`);
       },
       [updateUser.rejected]: (state, { payload }) => {
         state.isLoading = false;
