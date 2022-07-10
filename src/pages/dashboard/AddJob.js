@@ -26,6 +26,23 @@ const AddJob = () => {
       <FormRow type='text' name='position' value={position} handleChange={handleJobInput}/>
       <FormRow type='text' name='company' value={company} handleChange={handleJobInput}/>
       <FormRow type='text' name='jobLocation' labelText='Job Location' value={jobLocation} handleChange={handleJobInput}/>
+
+      <div className="form-row">
+        <label htmlFor="status" className='form-label'>
+         status
+        </label>
+        <select name="status" id="status"
+          value={status}
+          onChange={handleJobInput} 
+          className='form-select'>
+         {statusOptions.map((itemValue, index)=> {
+          return <option key={index} value={itemValue}>
+            {itemValue}
+          </option>
+         })}
+        </select>
+      </div>
+
       <div className="btn-container">
         <button type="button" className='btn btn-block clear-btn' onClick={()=>console.log('clear values')}>clear</button>
         <button type="submit" className='btn btn-block submit-btn' onClick={handleSubmit} disabled={isLoading}>submit</button>
