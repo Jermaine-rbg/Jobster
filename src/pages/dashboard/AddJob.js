@@ -1,11 +1,12 @@
-import { FormRow } from '../../components';
+import { FormRow, FormRowSelect } from '../../components';
 import Wrapper from '../../assets/wrappers/DashboardFormPage';
 import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
+import { handleChange, clearValues } from '../../features/user/job/jobSlice';
 
 const AddJob = () => {
   const {isLoading, position, company, jobLocation, jobType, jobTypeOptions, status, statusOptions, isEditing, editJobId} = useSelector((store)=> store.job);
-
+  const dispatch = useDispatch()
   const handleSubmit = (e) => {
     e.preventDefault()
     if(!position || !company || !jobLocation){
@@ -17,7 +18,7 @@ const AddJob = () => {
   const handleJobInput = (e) =>{
     const name = e.target.name;
     const value = e.target.value;
-    console.log(name, value);
+    dispatch(handleChange({name, value}))
   }
   return <Wrapper>
     <form className='form'>
@@ -26,6 +27,10 @@ const AddJob = () => {
       <FormRow type='text' name='position' value={position} handleChange={handleJobInput}/>
       <FormRow type='text' name='company' value={company} handleChange={handleJobInput}/>
       <FormRow type='text' name='jobLocation' labelText='Job Location' value={jobLocation} handleChange={handleJobInput}/>
+
+     <FormRowSelect name="status" value={status} handleChange={handleJobInput} list={statusOptions} />
+     <FormRowSelect name="jobType" labelText='job type' value={jobType} handleChange={handleJobInput} list={jobTypeOptions} />
+     
 
       <div className="form-row">
         <label htmlFor="status" className='form-label'>
@@ -44,7 +49,7 @@ const AddJob = () => {
       </div>
 
       <div className="btn-container">
-        <button type="button" className='btn btn-block clear-btn' onClick={()=>console.log('clear values')}>clear</button>
+        <button type="button" className='btn btn-block clear-btn' onClick={()=> dispatch(clearValues())}>clear</button>
         <button type="submit" className='btn btn-block submit-btn' onClick={handleSubmit} disabled={isLoading}>submit</button>
       </div>
      </div>
