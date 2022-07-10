@@ -9,6 +9,7 @@ export const FormRow = ({type, name, value, handleChange, labelText}
           </label>
 
           <input
+            id={name}
             type={type}
             value={value}
             name={name}
