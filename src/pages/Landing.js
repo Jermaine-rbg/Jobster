@@ -1,4 +1,4 @@
-import reactresume from '../assets/images/reactresume.svg'
+import reactresume from '../assets/images/reactresume3.svg'
 import Wrapper from '../assets/wrappers/LandingPage';
 import { Logo } from '../components';
 import { Link } from 'react-router-dom';
