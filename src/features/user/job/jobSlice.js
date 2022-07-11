@@ -50,6 +50,7 @@ const jobSlice = createSlice({
         return initialState
       }
     },
+
     extraReducers:{
       [createJob.pending] : (state) =>{
         state.isLoading = true;
@@ -62,7 +63,6 @@ const jobSlice = createSlice({
         state.isLoading = true;
         toast.error(payload)
       }
-    }
 });
 
 export const {handleChange, clearValues} = jobSlice.actions;

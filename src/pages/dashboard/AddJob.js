@@ -2,6 +2,7 @@ import { FormRow, FormRowSelect } from '../../components';
 import Wrapper from '../../assets/wrappers/DashboardFormPage';
 import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
+
 import { handleChange, clearValues, createJob } from '../../features/user/job/jobSlice';
 
 const AddJob = () => {
@@ -30,6 +31,10 @@ const AddJob = () => {
       <FormRow type='text' name='jobLocation' labelText='Job Location' value={jobLocation} handleChange={handleJobInput}/>
      <FormRowSelect name="status" value={status} handleChange={handleJobInput} list={statusOptions} />
      <FormRowSelect name="jobType" labelText='job type' value={jobType} handleChange={handleJobInput} list={jobTypeOptions} /
+
+     <FormRowSelect name="status" value={status} handleChange={handleJobInput} list={statusOptions} />
+     <FormRowSelect name="jobType" labelText='job type' value={jobType} handleChange={handleJobInput} list={jobTypeOptions} />
+     
 
       <div className="form-row">
         <label htmlFor="status" className='form-label'>
