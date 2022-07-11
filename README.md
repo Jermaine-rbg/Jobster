@@ -1830,9 +1830,7 @@ return (
 - sends back the job object
 
 ```js
-export const createJob = createAsyncThunk(
-  'job/createJob',
-  async (job, thunkAPI) => {
+export const createJob = createAsyncThunk('job/createJob',async (job, thunkAPI) => {
     try {
       const resp = await customFetch.post('/jobs', job, {
         headers: {
@@ -1840,7 +1838,7 @@ export const createJob = createAsyncThunk(
         },
       });
       thunkAPI.dispatch(clearValues());
-      return resp.data;
+      return resp.data
     } catch (error) {
       // basic setup
       return thunkAPI.rejectWithValue(error.response.data.msg);
