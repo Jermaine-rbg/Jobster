@@ -2,7 +2,8 @@ import { FormRow, FormRowSelect } from '../../components';
 import Wrapper from '../../assets/wrappers/DashboardFormPage';
 import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
-import { handleChange, clearValues } from '../../features/user/job/jobSlice';
+
+import { handleChange, clearValues, createJob } from '../../features/user/job/jobSlice';
 
 const AddJob = () => {
   const {isLoading, position, company, jobLocation, jobType, jobTypeOptions, status, statusOptions, isEditing, editJobId} = useSelector((store)=> store.job);
@@ -13,7 +14,8 @@ const AddJob = () => {
       toast.error('You Left Something Out!')
       return 
     }
-  }
+    dispatch(createJob({position, company, jobLocation, jobType, status }))
+  };
 
   const handleJobInput = (e) =>{
     const name = e.target.name;
@@ -27,6 +29,8 @@ const AddJob = () => {
       <FormRow type='text' name='position' value={position} handleChange={handleJobInput}/>
       <FormRow type='text' name='company' value={company} handleChange={handleJobInput}/>
       <FormRow type='text' name='jobLocation' labelText='Job Location' value={jobLocation} handleChange={handleJobInput}/>
+     <FormRowSelect name="status" value={status} handleChange={handleJobInput} list={statusOptions} />
+     <FormRowSelect name="jobType" labelText='job type' value={jobType} handleChange={handleJobInput} list={jobTypeOptions} /
 
      <FormRowSelect name="status" value={status} handleChange={handleJobInput} list={statusOptions} />
      <FormRowSelect name="jobType" labelText='job type' value={jobType} handleChange={handleJobInput} list={jobTypeOptions} />
@@ -47,7 +51,6 @@ const AddJob = () => {
          })}
         </select>
       </div>
-
       <div className="btn-container">
         <button type="button" className='btn btn-block clear-btn' onClick={()=> dispatch(clearValues())}>clear</button>
         <button type="submit" className='btn btn-block submit-btn' onClick={handleSubmit} disabled={isLoading}>submit</button>
