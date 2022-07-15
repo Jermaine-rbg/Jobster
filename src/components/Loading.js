@@ -2,7 +2,7 @@
 
 const Loading = ({center}) => {
   return (
-    <div className={center?'loading loading-center' : 'loading'}>Loading</div>
+    <div className={center?'loading loading-center' : 'loading'}></div>
   )
 }
 
