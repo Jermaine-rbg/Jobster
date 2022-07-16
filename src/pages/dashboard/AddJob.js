@@ -2,6 +2,12 @@ import { FormRow, FormRowSelect } from '../../components';
 import Wrapper from '../../assets/wrappers/DashboardFormPage';
 import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
+import {
+  clearValues,
+  handleChange,
+  createJob,
+  editJob,
+} from '../../features/user/job/jobSlice';
 
 import { handleChange, clearValues, createJob } from '../../features/user/job/jobSlice';
 import { useEffect } from 'react';
@@ -16,6 +22,10 @@ const AddJob = () => {
       toast.error('You Left Something Out!')
       return 
     }
+    if(isEditing){
+      dispatch(editJob({jobId:editJobId, job:{position, company, jobLocation, jobType, status}}))
+      return;
+    }
     dispatch(createJob({position, company, jobLocation, jobType, status }))
   };
 
@@ -25,9 +35,11 @@ const AddJob = () => {
     dispatch(handleChange({name, value}))
   }
 
-  useEffect(() =>{
-dispatch(handleChange({name: 'jobLocation', value:user.location,}))
-  }, [])
+  useEffect(() => {
+    if (!isEditing) {
+      dispatch(handleChange({ name: 'jobLocation', value: user.location }));
+    }
+  }, );
   return <Wrapper>
     <form className='form'>
      <h3>{isEditing? 'edit job' : 'add job'}</h3>
@@ -65,5 +77,5 @@ dispatch(handleChange({name: 'jobLocation', value:user.location,}))
     </form>
   </Wrapper>
 };
-
+  
 export default AddJob;
