@@ -1,5 +1,5 @@
 import NavLinks from './NavLinks';
-import Logo from '../components/logo';
+// import Logo from '../components/logo';
 import Wrapper from '../assets/wrappers/BigSidebar';
 import { useSelector } from 'react-redux';
 
@@ -10,7 +10,7 @@ const BigSidebar = () => {
     <div className={isSidebarOpen?'sidebar-container ' : 'sidebar-container show-sidebar'}>
       <div className='content'>
        <header>
-        <Logo />
+        {/* <Logo /> */}
        </header>
        <NavLinks />
       </div>
