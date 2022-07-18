@@ -71,9 +71,11 @@ const jobSlice = createSlice({
           state.isLoading = false;
           toast.error(payload);
       },
+    
+ 
       
     }
-      }
+      
 
 });
 
