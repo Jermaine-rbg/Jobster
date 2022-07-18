@@ -13,7 +13,7 @@ import {
 
 
 
-import { handleChange, clearValues, createJob } from '../../features/user/job/jobSlice';
+
 
 const AddJob = () => {
   const {isLoading, position, company, jobLocation, jobType, jobTypeOptions, status, statusOptions, isEditing, editJobId} = useSelector((store)=> store.job);
