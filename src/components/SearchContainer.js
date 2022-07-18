@@ -8,9 +8,9 @@ import { handleChange, clearFilters } from '../features/allJobs/allJobsSlice';
 const SearchContainer = () => {
   const {isLoading, search, searchStatus, searchType, sort, sortOptions} = useSelector((store) => store.allJobs);
   const {jobTypeOptions, statusOptions } = useSelector((store) => store.job);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   const handleSearch =(e) => {
-    // is loading check later
+    if(isLoading) return;
     dispatch(handleChange({name:e.target.name, value:e.target.value}));
   }
   const handleSubmit =(e) => {
@@ -30,7 +30,7 @@ const SearchContainer = () => {
             name='searchStatus'
             value={searchStatus}
             handleChange={handleSearch}
-            list={['all',...statusOptions]}
+            list={['all', ...statusOptions]}
           />
 
           {/* search by type */}
