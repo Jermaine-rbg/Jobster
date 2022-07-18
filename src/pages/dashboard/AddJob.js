@@ -10,7 +10,10 @@ import {
   editJob,
 } from '../../features/user/job/jobSlice';
 
-// import { useEffect } from 'react';
+
+
+
+import { handleChange, clearValues, createJob } from '../../features/user/job/jobSlice';
 
 const AddJob = () => {
   const {isLoading, position, company, jobLocation, jobType, jobTypeOptions, status, statusOptions, isEditing, editJobId} = useSelector((store)=> store.job);
@@ -49,6 +52,10 @@ const AddJob = () => {
       <FormRow type='text' name='jobLocation' labelText='Job Location' value={jobLocation} handleChange={handleJobInput}/>
      {/* <FormRowSelect name="status" value={status} handleChange={handleJobInput} list={statusOptions} /> */}
      <FormRowSelect name="jobType" labelText='job type' value={jobType} handleChange={handleJobInput} list={jobTypeOptions} />
+
+     <FormRowSelect name="status" value={status} handleChange={handleJobInput} list={statusOptions} />
+     <FormRowSelect name="jobType" labelText='job type' value={jobType} handleChange={handleJobInput} list={jobTypeOptions} />
+     
 
       <div className="form-row">
         <label htmlFor="status" className='form-label'>
