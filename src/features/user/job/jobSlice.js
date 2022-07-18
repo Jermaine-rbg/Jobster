@@ -69,9 +69,9 @@ const jobSlice = createSlice({
           state.isLoading = false;
           toast.error(payload);
       },
-      
-    }
-});
+    } 
+    
+  });
 
 export const {handleChange, clearValues, setEditJob} = jobSlice.actions;
 
